@@ -7,7 +7,7 @@ export interface TodoStorage {
 }
 
 const VueLocalStorage = {
-  install: (_Vue: any, _options: any) => {
+  install: (Vue: any, _options: any) => {
     const STORAGE_KEY = 'todos-vuejs-demo'
     const todoStorage: TodoStorage = {
       fetch: () => {
@@ -17,7 +17,7 @@ const VueLocalStorage = {
         todos.forEach((todo, index) => {
             todo.id = index
         })
-        
+
         return todos
       },
       save: function(todos) {
