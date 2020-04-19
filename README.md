@@ -1,9 +1,11 @@
-# tutorial
+# 次世代のTodoアプリ(Next Generation Todo App)
 
-> My priceless Nuxt.js project
+[![Netlify Status](https://api.netlify.com/api/v1/badges/28dbeab1-fc40-4153-92e5-f2ae6f454488/deploy-status)](https://app.netlify.com/sites/expert-meme/deploys)
+
+## Example
+https://expert-meme.netlify.app
 
 ## Build Setup
-
 ```bash
 # install dependencies
 $ yarn install
@@ -19,4 +21,3 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
