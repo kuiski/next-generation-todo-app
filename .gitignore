@@ -89,3 +89,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# auto generated files
+/static/src/

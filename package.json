@@ -5,18 +5,27 @@
   "author": "",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
+    "dev": "npm run generate-map && nuxt",
+    "build": "npm run generate-map && nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate-map": "find . \\( -name '*.ts' -o -name '*.vue' -o -name '*.json' -o -name '*.gql' \\) -not \\( -path './node_modules/*' -o -path './.nuxt/*' -o -path './dist/*' \\)  -exec rsync -R {} ./static/src \\;",
+    "generate": "npm run generate-map && nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
+    "@vue/apollo-composable": "^4.0.0-alpha.8",
+    "apollo-boost": "^0.4.7",
+    "apollo-client": "^2.6.8",
+    "apollo-link-context": "^1.0.20",
     "element-ui": "^2.4.11",
-    "nuxt": "^2.0.0"
+    "graphql": "^15.0.0",
+    "graphql-import": "^1.0.2",
+    "graphql-tag": "^2.10.3",
+    "nuxt": "^2.0.0",
+    "vue-highlightjs": "^1.3.3"
   },
   "moduleNameMapper": {
     "^~/(.*)$": "<rootDir>/$1"
@@ -25,6 +34,7 @@
     "@nuxt/typescript-build": "^0.6.0",
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@types/highlight.js": "^9.12.3",
     "@vue/composition-api": "^0.5.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",

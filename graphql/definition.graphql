@@ -1,0 +1,19 @@
+type User {
+  email: String!
+  todos: [Todo!] @relation
+}
+
+type Todo {
+  title: String!
+  status: String!
+  completed: Boolean
+  owner: User
+}
+
+type Query {
+  allUsers: [User!]
+  allTodos: [Todo!]
+  todosByStatus(status: String!): [Todo!]
+
+  usersByEmail(email: String!): [User!]
+}

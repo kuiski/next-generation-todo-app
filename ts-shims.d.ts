@@ -10,3 +10,8 @@ declare module 'vue/types/vue' {
     $localStorage: TodoStorage
   }
 }
+
+declare module '*.gql' {
+  import Graphql from 'graphql'
+  export default Graphql
+}

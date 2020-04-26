@@ -23,11 +23,20 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['element-ui/lib/theme-chalk/index.css'],
+  css: [
+    'element-ui/lib/theme-chalk/index.css',
+    '@/node_modules/highlight.js/styles/vs2015.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/element-ui', '@/plugins/local-storage', '@/plugins/composition-api'],
+  plugins: [
+    '@/plugins/element-ui',
+    '@/plugins/local-storage',
+    '@/plugins/composition-api',
+    '@/plugins/apollo-client',
+    '@/plugins/highlightjs'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -56,5 +65,10 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+
+  env: {
+    FAUNA_ENDPOINT: 'https://graphql.fauna.com/graphql',
+    FAUNA_TOKEN: 'fnADqPcfb5ACAYJp3Qs92hBvC3jPs-8E-8zvPUMD' // TODO: fix later
   }
 }
