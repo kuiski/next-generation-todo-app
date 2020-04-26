@@ -8,7 +8,7 @@
     "dev": "npm run generate-map && nuxt",
     "build": "npm run generate-map && nuxt build",
     "start": "nuxt start",
-    "generate-map": "find . \\( -name '*.ts' -o -name '*.vue' -o -name '*.json' -o -name '*.gql' \\) -not \\( -path './node_modules/*' -o -path './.nuxt/*' -o -path './dist/*' \\)  -exec cp --parents {} ./static/src \\;",
+    "generate-map": "mkdir -p static/src && find . \\( -name '*.ts' -o -name '*.vue' -o -name '*.json' -o -name '*.gql' \\) -not \\( -path './node_modules/*' -o -path './.nuxt/*' -o -path './dist/*' -o -path './static/*' \\)  -exec rsync -R \"{}\" \"./static/src\" \\;",
     "generate": "npm run generate-map && nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
